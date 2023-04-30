@@ -1,0 +1,24 @@
+#include<stdio.h>
+int r(int n);
+int main()
+{
+    int n,res=0;
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++)
+    {
+        res+=r(i);
+    }
+    printf("%d\n",res);
+    return 0;
+}
+int r(int n)
+{
+    if(n>1)
+    {
+        return n*r(n-1);
+    }
+    else
+    {
+        return 1;
+    }
+}
