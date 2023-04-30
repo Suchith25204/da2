@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char a[100];
+    int i,words,vowels,consonants,special,space,l;
+    printf("Enter the words:\n");
+    fgets(a,sizeof(a),stdin);
+    l=strlen(a);
+    for (i=0;i<l; i++)
+    {
+        while(a[i]!='\0')
+        {
+            a[i]=tolower(a[i]);
+            if((a[i]=='a')||(a[i]=='e')||(a[i]=='i')||(a[i]=='o')||(a[i]=='u'))
+            {
+                vowels++;
+            }
+            else if((a[i]>='a')&&(a[i]<='z'))
+            {
+                consonants++;
+            }
+            else if(a[i]==' ')
+            {
+                space++;
+            }
+            else
+            {
+                special++;
+            }
+        }    
+    }
+    printf("Words = %d\n",space+1);
+    printf("Vowels = %d\n",vowels);
+    printf("Consonants = %d\n",consonants);
+    printf("Space = %d\n",space);
+    printf("Symbols = %d\n",special-1);
+    return 0;
+}
